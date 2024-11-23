@@ -5,7 +5,7 @@ export async function getPosts() {
   return JSON.parse(data);
 }
 
-export async function getPost(id: string) {
+export async function getPost(id: number) {
   let data = await fs.readFile("demo-data.json", "utf-8");
   let posts = JSON.parse(data);
   let post  = posts.find((post: any) => post.id == id);
