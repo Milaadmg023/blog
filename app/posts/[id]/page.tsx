@@ -11,8 +11,8 @@ type ProductDetailsPageParam = {
 };
 
 
-export default async function Post({ params }: ProductDetailsPageProp) {
-  const { id } = params;
+export default async function Post(props: ProductDetailsPageProp) {
+  const { id } = props.params;
   const post: PostType = await getPost(id);
   return (
     <>
