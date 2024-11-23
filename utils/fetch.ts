@@ -12,7 +12,7 @@ export async function getPost(id: string) {
   return post;
 }
 
-export async function getTagPosts({ tag }: { tag: string }) {
+export async function getTagPosts(tag: string) {
   let data = await fs.readFile("demo-data.json", "utf-8");
   let posts = JSON.parse(data);
   return posts.filter((post: any) => post.tags.includes(tag));

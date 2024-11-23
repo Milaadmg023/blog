@@ -4,7 +4,7 @@ import { getTagPosts } from "@/utils/fetch";
 import Posts from "@/components/home/posts";
 
 export default async function Tag({ params }: { params: { tag: string } }) {
-  const posts: PostType[] = await getTagPosts({ tag: params.tag });
+  const posts: PostType[] = await getTagPosts(params.tag);
   console.log(posts);
   
   return (
