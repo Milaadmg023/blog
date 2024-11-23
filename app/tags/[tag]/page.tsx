@@ -3,11 +3,7 @@ import { getTagPosts } from "@/utils/fetch";
 //components
 import Posts from "@/components/home/posts";
 
-export interface TagProps {
-  params: { tag: string };
-}
-
-export default async function Tag({ params }: TagProps) {
+export default async function Tag({ params }: { params: Promise<string> & {tag:string}}) {
   const { tag } = params;
   const posts: PostType[] = await getTagPosts(tag);
   return (
